@@ -1,6 +1,6 @@
 package com.gardhagen.WigellkoncernenCarRental.models;
 
-abstract class Person {
+public abstract class Person {
 
     private long id;
     private String firstName;
