@@ -1,5 +1,6 @@
 package com.gardhagen.WigellkoncernenCarRental.models.cars;
 
+import com.gardhagen.WigellkoncernenCarRental.repository.CarRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +10,7 @@ import java.util.List;
 @Configuration
 public class CarConfig {
 
-    @Bean
+//    @Bean
     CommandLineRunner commandLineRunner1(CarRepository repository){
         return args -> {
             Car volvo = new Car(

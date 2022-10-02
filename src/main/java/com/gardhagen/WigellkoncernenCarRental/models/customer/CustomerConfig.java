@@ -1,5 +1,6 @@
 package com.gardhagen.WigellkoncernenCarRental.models.customer;
 
+import com.gardhagen.WigellkoncernenCarRental.repository.CustomerRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +12,7 @@ import java.util.List;
 @Configuration
 public class CustomerConfig {
 
-    @Bean
+//    @Bean
     CommandLineRunner commandLineRunner(CustomerRepository repository){
         return  args -> {
             Customer alfred = new Customer(

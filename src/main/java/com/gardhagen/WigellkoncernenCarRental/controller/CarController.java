@@ -1,7 +1,7 @@
 package com.gardhagen.WigellkoncernenCarRental.controller;
 
 import com.gardhagen.WigellkoncernenCarRental.models.cars.Car;
-import com.gardhagen.WigellkoncernenCarRental.models.cars.CarService;
+import com.gardhagen.WigellkoncernenCarRental.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,5 +1,6 @@
-package com.gardhagen.WigellkoncernenCarRental.models.customer;
+package com.gardhagen.WigellkoncernenCarRental.repository;
 
+import com.gardhagen.WigellkoncernenCarRental.models.customer.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

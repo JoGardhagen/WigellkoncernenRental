@@ -17,9 +17,14 @@ public class Customer {
             generator = "customer_sequence"
     )
     private Long id;
+
+//    @Column(name = "first-Name",nullable = false)
     private String firstName;
+//    @Column(name = "last-Name",nullable = false)
     private String lastName;
+//    @Column(name = "age")
     private int age;
+//    @Column(name = "email")
     private String email;
 
     public Customer() {
