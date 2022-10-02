@@ -7,14 +7,36 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class CarService {
-    private final CarRepository carRepository;
-
+public class CarService implements CarServiceInterface{
     @Autowired
-    public CarService(CarRepository carRepository){this.carRepository = carRepository;}
+    private CarRepository carRepository;
 
-    public List<Car> getCars(){
+
+//    @Autowired
+//    public CarService(CarRepository carRepository){this.carRepository = carRepository;}
+
+    @Override
+    public Car addCar(Car car) {
+        return carRepository.save(car);
+    }
+
+    public List<Car> getAllCars(){
         return carRepository.findAll();
+    }
+
+    @Override
+    public Car getCarById(long id) {
+        return null;
+    }
+
+    @Override
+    public Car updateCar(Car car, long id) {
+        return null;
+    }
+
+    @Override
+    public void deleteCar(long id) {
+
     }
 
 }
