@@ -26,7 +26,7 @@ public class CustomerController {
     public List<Customer> getCustomer(){return customerService.getAllCustomer();}
 
     @PostMapping("api/v1/addcustomer")
-    public ResponseEntity<Customer> saveCustomer(Customer customer){
+    public ResponseEntity<Customer> saveCustomer(@RequestBody Customer customer){
         return new ResponseEntity<Customer>(customerService.saveCustomer(customer), HttpStatus.CREATED);
     }
 }
