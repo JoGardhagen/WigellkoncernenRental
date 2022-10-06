@@ -27,6 +27,10 @@ public class CarController {
     public ResponseEntity<Car> addCar(@RequestBody Car car){
         return new ResponseEntity<Car>(carService.addCar(car), HttpStatus.CREATED);
     }
+    @PutMapping("api/v1/updatecar/{id}")
+    public ResponseEntity<Car> updateCar(@PathVariable("id")long id,@RequestBody Car car){
+        return new ResponseEntity<Car>(carService.updateCar(car,id),HttpStatus.OK);
+    }
     @DeleteMapping("api/v1/deletecar/{id}")
     public ResponseEntity<String> deleteCar(@PathVariable("id")Long id){
         carService.deleteCar(id);

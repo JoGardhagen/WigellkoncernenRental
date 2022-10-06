@@ -32,7 +32,14 @@ public class CarService implements CarServiceInterface{
 
     @Override
     public Car updateCar(Car car, long id) {
-        return null;
+        Car c =carRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException("Car","Id",id));
+        c.setBrand(car.getBrand());
+        c.setColor(car.getColor());
+        c.setFuelType(car.getFuelType());
+        c.setModelYear(car.getModelYear());
+        c.setStolen(car.isStolen());
+        carRepository.save(c);
+        return c;
     }
 
     @Override
