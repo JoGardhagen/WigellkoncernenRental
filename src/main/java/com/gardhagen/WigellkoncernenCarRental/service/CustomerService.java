@@ -11,7 +11,6 @@ import java.util.List;
 public class CustomerService implements CustomerServiceInterface{
     @Autowired
     private CustomerRepository customerRepository;
-
 //    @Autowired
 //    public CustomerService(CustomerRepository customerRepository){this.customerRepository = customerRepository;}
 
