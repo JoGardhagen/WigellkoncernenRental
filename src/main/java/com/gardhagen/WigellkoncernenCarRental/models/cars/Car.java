@@ -1,5 +1,7 @@
 package com.gardhagen.WigellkoncernenCarRental.models.cars;
 
+
+
 import javax.persistence.*;
 
 @Entity
@@ -23,6 +25,7 @@ public class Car {
     private int modelYear;
     boolean stolen;
 
+
     public Car() {
     }
 
@@ -33,6 +36,7 @@ public class Car {
         this.color = color;
         this.modelYear = modelYear;
         this.stolen = stolen;
+
     }
 
     public Car(String brand, String fuelType, String color, int modelYear, boolean stolen) {

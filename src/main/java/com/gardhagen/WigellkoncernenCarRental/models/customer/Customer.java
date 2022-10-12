@@ -1,5 +1,6 @@
 package com.gardhagen.WigellkoncernenCarRental.models.customer;
 
+
 import javax.persistence.*;
 
 @Entity
@@ -26,6 +27,7 @@ public class Customer {
     private int age;
 //    @Column(name = "email")
     private String email;
+
 
     public Customer() {
     }

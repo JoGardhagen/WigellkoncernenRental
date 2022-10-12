@@ -10,7 +10,7 @@ import java.util.List;
 @Configuration
 public class CarConfig {
 
-//    @Bean
+   @Bean
     CommandLineRunner commandLineRunner1(CarRepository repository){
         return args -> {
             Car volvo = new Car(
