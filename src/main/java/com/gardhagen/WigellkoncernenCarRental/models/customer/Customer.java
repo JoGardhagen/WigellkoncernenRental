@@ -17,15 +17,10 @@ public class Customer {
             strategy = GenerationType.SEQUENCE,
             generator = "customer_sequence"
     )
-    private Long id;
-
-//    @Column(name = "first-Name",nullable = false)
+    private long id;
     private String firstName;
-//    @Column(name = "last-Name",nullable = false)
     private String lastName;
-//    @Column(name = "age")
     private int age;
-//    @Column(name = "email")
     private String email;
 
 
@@ -39,7 +34,8 @@ public class Customer {
         this.email = email;
     }
 
-    public Customer(Long id, String firstName, String lastName, int age, String email) {
+
+    public Customer(long id, String firstName, String lastName, int age, String email) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -47,11 +43,11 @@ public class Customer {
         this.email = email;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

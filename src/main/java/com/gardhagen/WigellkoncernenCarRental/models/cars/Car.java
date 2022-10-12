@@ -36,7 +36,6 @@ public class Car {
         this.color = color;
         this.modelYear = modelYear;
         this.stolen = stolen;
-
     }
 
     public Car(String brand, String fuelType, String color, int modelYear, boolean stolen) {
@@ -46,6 +45,7 @@ public class Car {
         this.modelYear = modelYear;
         this.stolen = stolen;
     }
+
 
     public long getId() {
         return id;
