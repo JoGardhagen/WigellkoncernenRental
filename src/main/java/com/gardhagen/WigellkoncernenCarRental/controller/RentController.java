@@ -1,6 +1,8 @@
 package com.gardhagen.WigellkoncernenCarRental.controller;
 
 import com.gardhagen.WigellkoncernenCarRental.models.order.Rent;
+import com.gardhagen.WigellkoncernenCarRental.repository.CarRepository;
+import com.gardhagen.WigellkoncernenCarRental.repository.CustomerRepository;
 import com.gardhagen.WigellkoncernenCarRental.repository.RentRepository;
 import com.gardhagen.WigellkoncernenCarRental.service.RentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+//@RestController
 public class RentController {
+
+    @Autowired
+    private CustomerRepository customerRepository;
+    @Autowired
+    private CarRepository carRepository;
 
     @Autowired
     private RentRepository rentRepository;

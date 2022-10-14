@@ -29,6 +29,7 @@ public class Rent {
     @JoinColumn(name = "customer_fk",referencedColumnName = "id")
     private Customer customer;
 
+
     public Rent() {
     }
 

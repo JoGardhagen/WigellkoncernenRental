@@ -29,6 +29,10 @@ public class Car {
     public Car() {
     }
 
+    public Car(long id) {
+        this.id = id;
+    }
+
     public Car(long id, String brand, String fuelType, String color, int modelYear, boolean stolen) {
         this.id = id;
         this.brand = brand;
