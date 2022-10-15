@@ -37,7 +37,6 @@ public class CarService implements CarServiceInterface{
         c.setColor(car.getColor());
         c.setFuelType(car.getFuelType());
         c.setModelYear(car.getModelYear());
-        c.setStolen(car.isStolen());
         carRepository.save(c);
         return c;
     }

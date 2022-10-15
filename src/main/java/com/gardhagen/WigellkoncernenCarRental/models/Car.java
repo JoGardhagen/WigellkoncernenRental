@@ -23,7 +23,6 @@ public class Car {
     private String fuelType;
     private String color;
     private int modelYear;
-    boolean stolen;
 
 
     public Car() {
@@ -33,21 +32,20 @@ public class Car {
         this.id = id;
     }
 
-    public Car(long id, String brand, String fuelType, String color, int modelYear, boolean stolen) {
+    public Car(long id, String brand, String fuelType, String color, int modelYear) {
         this.id = id;
         this.brand = brand;
         this.fuelType = fuelType;
         this.color = color;
         this.modelYear = modelYear;
-        this.stolen = stolen;
+
     }
 
-    public Car(String brand, String fuelType, String color, int modelYear, boolean stolen) {
+    public Car(String brand, String fuelType, String color, int modelYear) {
         this.brand = brand;
         this.fuelType = fuelType;
         this.color = color;
         this.modelYear = modelYear;
-        this.stolen = stolen;
     }
 
 
@@ -91,11 +89,5 @@ public class Car {
         this.modelYear = modelYear;
     }
 
-    public boolean isStolen() {
-        return stolen;
-    }
 
-    public void setStolen(boolean stolen) {
-        this.stolen = stolen;
-    }
 }
