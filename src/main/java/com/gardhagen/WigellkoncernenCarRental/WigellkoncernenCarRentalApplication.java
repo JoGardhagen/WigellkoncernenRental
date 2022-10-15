@@ -56,13 +56,12 @@ public class WigellkoncernenCarRentalApplication implements CommandLineRunner {
 		car.setFuelType("Bensin");
 		car.setModelYear(1994);
 
-
 		carRepository.save(car);
-//
-//		Rent rent = new Rent();
-//		rent.setCustomer(customer);
-//		rent.setCar(car);
-//		rentRepository.save(rent);
+
+		Rent rent = new Rent();
+		rent.setCustomer(customer);
+		rent.setCar(car);
+		rentRepository.save(rent);
 
 	}
 }

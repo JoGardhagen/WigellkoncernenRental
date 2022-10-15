@@ -21,12 +21,12 @@ public class Rent {
     )
     private long id;
 
-    @OneToOne(targetEntity = Car.class,cascade = CascadeType.ALL)
-    @JoinColumn(name = "car_fk",referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.EAGER ,optional = false)
+    @JoinColumn(name = "car_id")
     private Car car;
 
-    @OneToOne(targetEntity = Customer.class,cascade = CascadeType.ALL)
-    @JoinColumn(name = "customer_fk",referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.EAGER ,optional = false)
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
 

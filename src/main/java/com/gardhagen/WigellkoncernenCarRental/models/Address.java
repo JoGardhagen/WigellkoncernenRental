@@ -18,6 +18,7 @@ public class Address {
             generator = "address_sequence"
     )
     private long id;
+
     private String locationName;
     private int postalNr;
 
@@ -33,6 +34,10 @@ public class Address {
         this.id = id;
         this.locationName = locationName;
         this.postalNr = postalNr;
+    }
+
+    public Address(long id) {
+        this.id = id;
     }
 
     public long getId() {
