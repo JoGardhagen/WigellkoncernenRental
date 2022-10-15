@@ -1,6 +1,6 @@
 package com.gardhagen.WigellkoncernenCarRental.service;
 
-import com.gardhagen.WigellkoncernenCarRental.models.order.Rent;
+import com.gardhagen.WigellkoncernenCarRental.models.Rent;
 import com.gardhagen.WigellkoncernenCarRental.repository.RentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

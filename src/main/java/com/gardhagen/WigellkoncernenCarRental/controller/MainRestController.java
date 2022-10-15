@@ -1,11 +1,8 @@
 package com.gardhagen.WigellkoncernenCarRental.controller;
 
-import com.gardhagen.WigellkoncernenCarRental.models.cars.Car;
-import com.gardhagen.WigellkoncernenCarRental.models.customer.Customer;
-import com.gardhagen.WigellkoncernenCarRental.models.order.Rent;
-import com.gardhagen.WigellkoncernenCarRental.repository.CarRepository;
-import com.gardhagen.WigellkoncernenCarRental.repository.CustomerRepository;
-import com.gardhagen.WigellkoncernenCarRental.repository.RentRepository;
+import com.gardhagen.WigellkoncernenCarRental.models.Car;
+import com.gardhagen.WigellkoncernenCarRental.models.Customer;
+import com.gardhagen.WigellkoncernenCarRental.models.Rent;
 import com.gardhagen.WigellkoncernenCarRental.service.CarService;
 import com.gardhagen.WigellkoncernenCarRental.service.CustomerService;
 import com.gardhagen.WigellkoncernenCarRental.service.RentService;

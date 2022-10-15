@@ -1,7 +1,7 @@
-package com.gardhagen.WigellkoncernenCarRental.models.order;
+package com.gardhagen.WigellkoncernenCarRental.models;
 
-import com.gardhagen.WigellkoncernenCarRental.models.cars.Car;
-import com.gardhagen.WigellkoncernenCarRental.models.customer.Customer;
+import com.gardhagen.WigellkoncernenCarRental.models.Car;
+import com.gardhagen.WigellkoncernenCarRental.models.Customer;
 
 import javax.persistence.*;
 

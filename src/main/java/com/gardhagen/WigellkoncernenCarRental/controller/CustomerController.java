@@ -1,6 +1,6 @@
 package com.gardhagen.WigellkoncernenCarRental.controller;
 
-import com.gardhagen.WigellkoncernenCarRental.models.customer.Customer;
+import com.gardhagen.WigellkoncernenCarRental.models.Customer;
 import com.gardhagen.WigellkoncernenCarRental.service.CustomerService;
 import com.gardhagen.WigellkoncernenCarRental.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;

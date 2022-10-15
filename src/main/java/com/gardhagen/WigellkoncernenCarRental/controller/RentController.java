@@ -1,6 +1,6 @@
 package com.gardhagen.WigellkoncernenCarRental.controller;
 
-import com.gardhagen.WigellkoncernenCarRental.models.order.Rent;
+import com.gardhagen.WigellkoncernenCarRental.models.Rent;
 import com.gardhagen.WigellkoncernenCarRental.repository.CarRepository;
 import com.gardhagen.WigellkoncernenCarRental.repository.CustomerRepository;
 import com.gardhagen.WigellkoncernenCarRental.repository.RentRepository;
@@ -11,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 

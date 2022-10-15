@@ -1,7 +1,6 @@
 package com.gardhagen.WigellkoncernenCarRental.service;
 
-import com.gardhagen.WigellkoncernenCarRental.models.customer.Customer;
-import org.springframework.web.bind.annotation.ResponseBody;
+import com.gardhagen.WigellkoncernenCarRental.models.Customer;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.gardhagen.WigellkoncernenCarRental.service;
 
-import com.gardhagen.WigellkoncernenCarRental.models.cars.Car;
+import com.gardhagen.WigellkoncernenCarRental.models.Car;
 
 import java.util.List;
 

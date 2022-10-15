@@ -1,4 +1,4 @@
-package com.gardhagen.WigellkoncernenCarRental.models.cars;
+package com.gardhagen.WigellkoncernenCarRental.models;
 
 
 

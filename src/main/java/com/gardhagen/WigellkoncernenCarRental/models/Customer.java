@@ -1,4 +1,4 @@
-package com.gardhagen.WigellkoncernenCarRental.models.customer;
+package com.gardhagen.WigellkoncernenCarRental.models;
 
 
 import javax.persistence.*;
