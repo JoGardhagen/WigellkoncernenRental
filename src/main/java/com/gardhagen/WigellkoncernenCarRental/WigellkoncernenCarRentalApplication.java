@@ -1,6 +1,8 @@
 package com.gardhagen.WigellkoncernenCarRental;
 
+import com.gardhagen.WigellkoncernenCarRental.models.Address;
 import com.gardhagen.WigellkoncernenCarRental.models.Customer;
+import com.gardhagen.WigellkoncernenCarRental.repository.AddressRepository;
 import com.gardhagen.WigellkoncernenCarRental.repository.CarRepository;
 import com.gardhagen.WigellkoncernenCarRental.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,15 +23,25 @@ public class WigellkoncernenCarRentalApplication implements CommandLineRunner {
 
 	@Autowired
 	private CarRepository carRepository;
+	@Autowired
+	private AddressRepository addressRepository;
+
 
 	@Override
 	public void run(String... args) throws Exception {
+
+		Address address = new Address();
+		address.setLocationName("Örebro");
+		address.setPostalNr(1234);
+		addressRepository.save(address);
+
 
 		Customer customer = new Customer();
 		customer.setFirstName("Alfred");
 		customer.setLastName("Hitchcock");
 		customer.setAge(55);
 		customer.setEmail("alfred@gmail.com");
+		customer.setAddress(address);
 
 		customerRepository.save(customer);
 

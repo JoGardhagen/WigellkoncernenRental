@@ -1,5 +1,6 @@
 package com.gardhagen.WigellkoncernenCarRental.controller;
 
+import com.gardhagen.WigellkoncernenCarRental.dto.CustomerAddressDTO;
 import com.gardhagen.WigellkoncernenCarRental.models.Customer;
 import com.gardhagen.WigellkoncernenCarRental.service.CustomerService;
 import com.gardhagen.WigellkoncernenCarRental.repository.CustomerRepository;
@@ -10,8 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@RestController
-//@RequestMapping(path = "api/v1/customers")
+@RestController
 public class CustomerController {
 
     @Autowired
@@ -24,6 +24,11 @@ public class CustomerController {
 
     @GetMapping("api/v1/customers")
     public List<Customer> getCustomer(){return customerService.getAllCustomer();}
+
+    @GetMapping("api/v1/customerinfo")
+    public List<CustomerAddressDTO> getAllCustomerInfo(){
+        return customerService.getAllCustomerInfo();
+    }
 
     @PostMapping("api/v1/addcustomer")
     public ResponseEntity<Customer> saveCustomer(@RequestBody Customer customer){

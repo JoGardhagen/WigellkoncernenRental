@@ -22,9 +22,30 @@ public class Customer {
     private String lastName;
     private int age;
     private String email;
+    @ManyToOne(fetch = FetchType.EAGER ,optional = false)
+    @JoinColumn(name = "addres_id")
+    private Address address;
+
 
 
     public Customer() {
+    }
+
+    public Customer(long id, String firstName, String lastName, int age, String email, Address address) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.email = email;
+        this.address = address;
+    }
+
+    public Customer(String firstName, String lastName, int age, String email, Address address) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.email = email;
+        this.address = address;
     }
 
     public Customer(String firstName, String lastName, int age, String email) {
@@ -41,6 +62,14 @@ public class Customer {
         this.lastName = lastName;
         this.age = age;
         this.email = email;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public long getId() {
