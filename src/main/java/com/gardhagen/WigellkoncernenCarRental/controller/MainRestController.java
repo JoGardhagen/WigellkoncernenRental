@@ -46,7 +46,7 @@ public class MainRestController {
         return new ResponseEntity<Car>(carService.updateCar(car,id),HttpStatus.OK);
     }
     @DeleteMapping("api/v1/deletecar/{id}")
-    public ResponseEntity<String> deleteCar(@PathVariable("id")Long id){
+    public ResponseEntity<String> deleteCar(@PathVariable("id")long id){
         carService.deleteCar(id);
         return new ResponseEntity<String>("Car Deleted",HttpStatus.OK);
     }
