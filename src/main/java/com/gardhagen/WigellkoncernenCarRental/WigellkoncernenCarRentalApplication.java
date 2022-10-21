@@ -23,7 +23,6 @@ public class WigellkoncernenCarRentalApplication implements CommandLineRunner {
 
 	@Autowired
 	private CustomerRepository customerRepository;
-
 	@Autowired
 	private CarRepository carRepository;
 	@Autowired
