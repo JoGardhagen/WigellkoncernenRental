@@ -1,7 +1,5 @@
 package com.gardhagen.WigellkoncernenCarRental.models;
 
-
-
 import javax.persistence.*;
 
 @Entity
