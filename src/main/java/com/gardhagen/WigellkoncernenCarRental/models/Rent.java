@@ -31,32 +31,31 @@ public class Rent {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    private String rentalDate;
+    private LocalDateTime rentalDate;
 
 
     public Rent() {
     }
 
-    public Rent(Car car, Customer customer, String rentalDate) {
-        this.car = car;
-        this.customer = customer;
-        this.rentalDate = rentalDate;
-
-    }
-
-    public Rent(long id, Car car, Customer customer, String rentalDate) {
+    public Rent(long id, Car car, Customer customer, LocalDateTime rentalDate) {
         this.id = id;
         this.car = car;
         this.customer = customer;
+        this.rentalDate.now();
+    }
+
+    public Rent(Car car, Customer customer, LocalDateTime rentalDate) {
+        this.car = car;
+        this.customer = customer;
         this.rentalDate = rentalDate;
     }
 
-    public String getRentalDate() {
-        return LocalDateTime.now().toString();
+    public LocalDateTime getRentalDate() {
+        return rentalDate;
     }
 
-    public void setRentalDate(String rentalDate) {
-        this.rentalDate = LocalDate.now().toString();
+    private void setRentalDate(LocalDateTime rentalDate) {
+        this.rentalDate = rentalDate;
     }
 
     public long getId() {
