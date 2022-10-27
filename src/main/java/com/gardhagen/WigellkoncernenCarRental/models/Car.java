@@ -18,34 +18,37 @@ public class Car {
     )
     private long id;
     private String brand;
-    private String fuelType;
-    private String color;
     private int modelYear;
+    private double rentalPrice;
 
 
     public Car() {
+    }
+
+    public Car(long id, String brand, int modelYear, double rentalPrice) {
+        this.id = id;
+        this.brand = brand;
+        this.modelYear = modelYear;
+        this.rentalPrice = rentalPrice;
+    }
+
+    public Car(String brand, int modelYear, double rentalPrice) {
+        this.brand = brand;
+        this.modelYear = modelYear;
+        this.rentalPrice = rentalPrice;
     }
 
     public Car(long id) {
         this.id = id;
     }
 
-    public Car(long id, String brand, String fuelType, String color, int modelYear) {
-        this.id = id;
-        this.brand = brand;
-        this.fuelType = fuelType;
-        this.color = color;
-        this.modelYear = modelYear;
-
+    public double getRentalPrice() {
+        return rentalPrice;
     }
 
-    public Car(String brand, String fuelType, String color, int modelYear) {
-        this.brand = brand;
-        this.fuelType = fuelType;
-        this.color = color;
-        this.modelYear = modelYear;
+    public void setRentalPrice(double rentalPrice) {
+        this.rentalPrice = rentalPrice;
     }
-
 
     public long getId() {
         return id;
@@ -61,22 +64,6 @@ public class Car {
 
     public void setBrand(String brand) {
         this.brand = brand;
-    }
-
-    public String getFuelType() {
-        return fuelType;
-    }
-
-    public void setFuelType(String fuelType) {
-        this.fuelType = fuelType;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
     }
 
     public int getModelYear() {

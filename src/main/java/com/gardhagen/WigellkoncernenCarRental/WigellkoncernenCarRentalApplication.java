@@ -53,9 +53,8 @@ public class WigellkoncernenCarRentalApplication implements CommandLineRunner {
 
 		Car car = new Car();
 		car.setBrand("Opel");
-		car.setColor("Blue");
-		car.setFuelType("Bensin");
 		car.setModelYear(1994);
+		car.setRentalPrice(400.0);
 
 		carRepository.save(car);
 

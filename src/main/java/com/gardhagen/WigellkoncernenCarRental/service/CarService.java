@@ -34,9 +34,8 @@ public class CarService implements CarServiceInterface{
     public Car updateCar(Car car, long id) {
         Car c =carRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException("Car","Id",id));
         c.setBrand(car.getBrand());
-        c.setColor(car.getColor());
-        c.setFuelType(car.getFuelType());
         c.setModelYear(car.getModelYear());
+        c.setRentalPrice(car.getRentalPrice());
         carRepository.save(c);
         return c;
     }
