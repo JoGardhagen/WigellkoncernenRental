@@ -4,6 +4,7 @@ import com.gardhagen.WigellkoncernenCarRental.models.Car;
 import com.gardhagen.WigellkoncernenCarRental.models.Customer;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -31,31 +32,33 @@ public class Rent {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    private LocalDateTime rentalDate;
+
+    private Date bookingDate = new Date(System.currentTimeMillis());
+
 
 
     public Rent() {
     }
 
-    public Rent(long id, Car car, Customer customer, LocalDateTime rentalDate) {
+    public Rent(long id, Car car, Customer customer, Date bookingDate) {
         this.id = id;
         this.car = car;
         this.customer = customer;
-        this.rentalDate.now();
+        this.bookingDate = bookingDate;
     }
 
-    public Rent(Car car, Customer customer, LocalDateTime rentalDate) {
+    public Rent(Car car, Customer customer, Date bookingDate) {
         this.car = car;
         this.customer = customer;
-        this.rentalDate = rentalDate;
+        this.bookingDate = bookingDate;
     }
 
-    public LocalDateTime getRentalDate() {
-        return rentalDate;
+    public Date getBookingDate() {
+        return bookingDate;
     }
 
-    private void setRentalDate(LocalDateTime rentalDate) {
-        this.rentalDate = rentalDate;
+    public void setBookingDate(Date bookingDate) {
+        this.bookingDate = bookingDate;
     }
 
     public long getId() {
