@@ -1,12 +1,7 @@
 package com.gardhagen.WigellkoncernenCarRental.models;
 
-import com.gardhagen.WigellkoncernenCarRental.models.Car;
-import com.gardhagen.WigellkoncernenCarRental.models.Customer;
-
 import javax.persistence.*;
 import java.sql.Date;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity
 @Table
