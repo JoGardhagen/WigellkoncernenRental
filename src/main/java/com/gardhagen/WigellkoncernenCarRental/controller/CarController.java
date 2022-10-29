@@ -1,5 +1,7 @@
 package com.gardhagen.WigellkoncernenCarRental.controller;
 
+import com.gardhagen.WigellkoncernenCarRental.VO.ResponseTemplateVO;
+import com.gardhagen.WigellkoncernenCarRental.dto.RentalPriceCurrencyExchangeDTO;
 import com.gardhagen.WigellkoncernenCarRental.models.Car;
 import com.gardhagen.WigellkoncernenCarRental.repository.CarRepository;
 import com.gardhagen.WigellkoncernenCarRental.service.CarService;
@@ -35,6 +37,11 @@ public class CarController {
     public ResponseEntity<String> deleteCar(@PathVariable("id")Long id){
         carService.deleteCar(id);
         return new ResponseEntity<String>("Car Deleted",HttpStatus.OK);
+    }
+
+    @GetMapping("/car/exchange")
+    public List<RentalPriceCurrencyExchangeDTO> getRentalPraices(){
+        return carService.getRentalPriceses();
     }
 
 
