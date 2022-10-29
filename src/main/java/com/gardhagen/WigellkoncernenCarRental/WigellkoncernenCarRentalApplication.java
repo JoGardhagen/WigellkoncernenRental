@@ -1,18 +1,12 @@
 package com.gardhagen.WigellkoncernenCarRental;
 
-import com.gardhagen.WigellkoncernenCarRental.models.Address;
-import com.gardhagen.WigellkoncernenCarRental.models.Car;
-import com.gardhagen.WigellkoncernenCarRental.models.Customer;
-import com.gardhagen.WigellkoncernenCarRental.models.Rent;
 import com.gardhagen.WigellkoncernenCarRental.repository.AddressRepository;
 import com.gardhagen.WigellkoncernenCarRental.repository.CarRepository;
 import com.gardhagen.WigellkoncernenCarRental.repository.CustomerRepository;
 import com.gardhagen.WigellkoncernenCarRental.repository.RentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 

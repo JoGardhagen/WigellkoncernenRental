@@ -21,8 +21,6 @@ public class CarService implements CarServiceInterface{
 
     @Autowired
     private RestTemplate restTemplate;
-//    @Autowired
-//    public CarService(CarRepository carRepository){this.carRepository = carRepository;}
 
     @Override
     public Car addCar(Car car) {
@@ -73,16 +71,8 @@ public class CarService implements CarServiceInterface{
         rentalPriceCurrencyExchangeDTO.setCarModelYear(car.getModelYear());
         rentalPriceCurrencyExchangeDTO.setCarRentalPrice(car.getRentalPrice()/currency.getValue());
         rentalPriceCurrencyExchangeDTO.setCurrencyName(currency.getCurrencyName());
+        rentalPriceCurrencyExchangeDTO.setCurrencyValue(currency.getValue());
         return rentalPriceCurrencyExchangeDTO;
     }
-//    public ResponseTemplateVO getRentalPraices(long id){
-//        ResponseTemplateVO vo = new ResponseTemplateVO();
-//        Car car = carRepository.findCarById(id);
-//        Currency currency = restTemplate.getForObject("http://localhost:5050/currency/" + car.getRentalPrice(),Currency.class);
-//        vo.setCar(car);
-//        vo.setCurrency(currency);
-//        return vo;
-//    }
-
 
 }

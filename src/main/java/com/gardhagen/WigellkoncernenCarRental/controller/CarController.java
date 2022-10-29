@@ -39,7 +39,7 @@ public class CarController {
         return new ResponseEntity<String>("Car Deleted",HttpStatus.OK);
     }
 
-    @GetMapping("/car/exchange")
+    @GetMapping("/exchange")
     public List<RentalPriceCurrencyExchangeDTO> getRentalPraices(){
         return carService.getRentalPriceses();
     }
