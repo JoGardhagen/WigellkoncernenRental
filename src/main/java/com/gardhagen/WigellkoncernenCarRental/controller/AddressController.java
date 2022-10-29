@@ -10,18 +10,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping(path = "api/v1")
 public class AddressController {
     @Autowired
     private AddressService addressService;
 
-    @GetMapping("api/v1/addresses")
+    @GetMapping("/addresses")
     public List<Address> getAllAddresses(){return addressService.getAllAddresses();}
 
-    @PostMapping("api/v1/addaddress")
+    @PostMapping("/addaddress")
     public ResponseEntity<Address> aaddAddress(@RequestBody Address address){
         return new ResponseEntity<Address>(addressService.addAddress(address), HttpStatus.CREATED);
     }
-    @DeleteMapping("api/v1/deleteadress/{id}")
+    @DeleteMapping("/deleteadress/{id}")
     public ResponseEntity<String> deleteDelete(@PathVariable("id")Long id){
         addressService.deleteDelete(id);
         return new ResponseEntity<String>("Address Deleted",HttpStatus.OK);

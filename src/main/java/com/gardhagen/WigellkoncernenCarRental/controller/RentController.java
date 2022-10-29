@@ -8,14 +8,12 @@ import com.gardhagen.WigellkoncernenCarRental.service.RentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping(path = "api/v1")
 public class RentController {
 
     @Autowired
@@ -30,9 +28,9 @@ public class RentController {
     @Autowired
     public RentController(RentService rentService){this.rentService = rentService;}
 
-    @GetMapping("api/v1/rentals")
+    @GetMapping("/rentals")
     public List<Rent> getAllRents(){return rentService.getAllRents();}
-    @PostMapping("api/v1/ordercar")
+    @PostMapping("/ordercar")
     public ResponseEntity<Rent> addRent(@RequestBody Rent rent){
         return new ResponseEntity<Rent>(rentService.addRent(rent), HttpStatus.CREATED);
     }

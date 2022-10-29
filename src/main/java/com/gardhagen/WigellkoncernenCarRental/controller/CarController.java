@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-//@RequestMapping(path = "api/v1/cars")
+@RequestMapping(path = "api/v1")
 public class CarController {
     @Autowired
     private CarService carService;
@@ -20,18 +20,18 @@ public class CarController {
 //    @Autowired
 //    public CarController(CarService carService){this.carService = carService;}
 
-    @GetMapping("api/v1/cars")
+    @GetMapping("/cars")
     public List<Car>getCar(){return carService.getAllCars();}
 
-    @PostMapping("api/v1/addcar")
+    @PostMapping("/addcar")
     public ResponseEntity<Car> addCar(@RequestBody Car car){
         return new ResponseEntity<Car>(carService.addCar(car), HttpStatus.CREATED);
     }
-    @PutMapping("api/v1/updatecar/{id}")
+    @PutMapping("/updatecar/{id}")
     public ResponseEntity<Car> updateCar(@PathVariable("id")long id,@RequestBody Car car){
         return new ResponseEntity<Car>(carService.updateCar(car,id),HttpStatus.OK);
     }
-    @DeleteMapping("api/v1/deletecar/{id}")
+    @DeleteMapping("/deletecar/{id}")
     public ResponseEntity<String> deleteCar(@PathVariable("id")Long id){
         carService.deleteCar(id);
         return new ResponseEntity<String>("Car Deleted",HttpStatus.OK);

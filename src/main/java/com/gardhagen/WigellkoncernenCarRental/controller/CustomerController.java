@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping(path = "api/v1")
 public class CustomerController {
 
     @Autowired
@@ -22,15 +23,15 @@ public class CustomerController {
     @Autowired
     public CustomerController(CustomerService customerService){this.customerService = customerService;}
 
-    @GetMapping("api/v1/customers")
+    @GetMapping("/customers")
     public List<Customer> getCustomer(){return customerService.getAllCustomer();}
 
-    @GetMapping("api/v1/customerinfo")
+    @GetMapping("/customerinfo")
     public List<CustomerAddressDTO> getAllCustomerInfo(){
         return customerService.getAllCustomerInfo();
     }
 
-    @PostMapping("api/v1/addcustomer")
+    @PostMapping("/addcustomer")
     public ResponseEntity<Customer> saveCustomer(@RequestBody Customer customer){
         return new ResponseEntity<Customer>(customerService.saveCustomer(customer), HttpStatus.CREATED);
     }
