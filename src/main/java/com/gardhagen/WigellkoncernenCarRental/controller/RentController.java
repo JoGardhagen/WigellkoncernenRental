@@ -1,5 +1,6 @@
 package com.gardhagen.WigellkoncernenCarRental.controller;
 
+import com.gardhagen.WigellkoncernenCarRental.dto.OrderCurrencyExchangeDTO;
 import com.gardhagen.WigellkoncernenCarRental.models.Rent;
 import com.gardhagen.WigellkoncernenCarRental.repository.CarRepository;
 import com.gardhagen.WigellkoncernenCarRental.repository.CustomerRepository;
@@ -34,4 +35,6 @@ public class RentController {
     public ResponseEntity<Rent> addRent(@RequestBody Rent rent){
         return new ResponseEntity<Rent>(rentService.addRent(rent), HttpStatus.CREATED);
     }
+    @GetMapping("/exchange")
+    public List<OrderCurrencyExchangeDTO> getTotalPriceExchanged(){ return rentService.getTotalPriceExchanged();}
 }

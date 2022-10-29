@@ -27,12 +27,21 @@ public class Rent {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
+    private int rentalDays;
 
     private Date bookingDate = new Date(System.currentTimeMillis());
 
 
 
     public Rent() {
+    }
+
+    public Rent(long id, Car car, Customer customer, int rentalDays, Date bookingDate) {
+        this.id = id;
+        this.car = car;
+        this.customer = customer;
+        this.rentalDays = rentalDays;
+        this.bookingDate = bookingDate;
     }
 
     public Rent(long id, Car car, Customer customer, Date bookingDate) {
@@ -46,6 +55,14 @@ public class Rent {
         this.car = car;
         this.customer = customer;
         this.bookingDate = bookingDate;
+    }
+
+    public int getRentalDays() {
+        return rentalDays;
+    }
+
+    public void setRentalDays(int rentalDays) {
+        this.rentalDays = rentalDays;
     }
 
     public Date getBookingDate() {

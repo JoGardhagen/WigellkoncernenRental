@@ -39,10 +39,10 @@ public class CarController {
         return new ResponseEntity<String>("Car Deleted",HttpStatus.OK);
     }
 
-    @GetMapping("/exchange")
-    public List<RentalPriceCurrencyExchangeDTO> getRentalPraices(){
-        return carService.getRentalPriceses();
-    }
+//    @GetMapping("/exchange")
+//    public List<RentalPriceCurrencyExchangeDTO> getRentalPraices(){
+//        return carService.getRentalPriceses();
+//    }
 
 
 }
