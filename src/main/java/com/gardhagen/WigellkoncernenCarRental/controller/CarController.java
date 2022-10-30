@@ -17,10 +17,6 @@ import java.util.List;
 public class CarController {
     @Autowired
     private CarService carService;
-    @Autowired
-    private CarRepository carRepository;
-//    @Autowired
-//    public CarController(CarService carService){this.carService = carService;}
 
     @GetMapping("/cars")
     public List<Car>getCar(){return carService.getAllCars();}
@@ -38,7 +34,7 @@ public class CarController {
         carService.deleteCar(id);
         return new ResponseEntity<String>("Car Deleted",HttpStatus.OK);
     }
-
+//en äldre växlings anrop för all bilar
 //    @GetMapping("/exchange")
 //    public List<RentalPriceCurrencyExchangeDTO> getRentalPraices(){
 //        return carService.getRentalPriceses();

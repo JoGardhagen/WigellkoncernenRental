@@ -3,6 +3,7 @@ package com.gardhagen.WigellkoncernenCarRental.service;
 import com.gardhagen.WigellkoncernenCarRental.VO.Currency;
 import com.gardhagen.WigellkoncernenCarRental.VO.ResponseTemplateRentalVO;
 import com.gardhagen.WigellkoncernenCarRental.dto.OrderCurrencyExchangeDTO;
+import com.gardhagen.WigellkoncernenCarRental.exception.ResourceNotFoundException;
 import com.gardhagen.WigellkoncernenCarRental.models.Rent;
 import com.gardhagen.WigellkoncernenCarRental.repository.RentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,13 +38,27 @@ public class RentService implements RentServiceInterface{
 
     @Override
     public Rent updateRent(Rent rent, long id) {
-        return null;
+        Rent rentOrder = rentRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException("Rent","Id",id));
+        rentOrder.setCar(rent.getCar());
+        rentOrder.setCustomer(rent.getCustomer());
+        rentOrder.setRentalDays(rent.getRentalDays());
+        rentOrder.setActive(rent.isActive());
+        return rentOrder;
+    }
+    @Override
+    public Rent cancelOrder(Rent rent, long id) {
+        Rent rentOrder = rentRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException("Rent","Id",id));
+        rentOrder.setCar(rent.getCar());
+        rentOrder.setCustomer(rent.getCustomer());
+        rentOrder.setRentalDays(rent.getRentalDays());
+        rentOrder.setActive(rent.isActive());
+        return rentOrder;
     }
 
     @Override
     public void deleteRent(long id) {
     }
-
+    //MicroService Call here! ///
     public List<OrderCurrencyExchangeDTO> getTotalPriceExchanged(){
         return rentRepository.findAll()
                 .stream()
@@ -52,11 +67,12 @@ public class RentService implements RentServiceInterface{
     }
     public OrderCurrencyExchangeDTO convertVoToDTO(Rent rent){
         ResponseTemplateRentalVO vo = new ResponseTemplateRentalVO();
-        Currency currency = restTemplate.getForObject("http://localhost:5050/currency/1",Currency.class);
+        Currency currency = restTemplate.getForObject("http://localhost:5050/currency/1",Currency.class);// call here
         vo.setCurrency(currency);
         vo.setRent(rent);
         OrderCurrencyExchangeDTO orderCurrencyExchangeDTO = new OrderCurrencyExchangeDTO();
         orderCurrencyExchangeDTO.setRentalId(rent.getId());
+        orderCurrencyExchangeDTO.setCustumerId(rent.getCustomer().getId());
         orderCurrencyExchangeDTO.setCustomerFirstName(rent.getCustomer().getFirstName());
         orderCurrencyExchangeDTO.setCustomerLastName(rent.getCustomer().getLastName());
         orderCurrencyExchangeDTO.setCarId(rent.getCar().getId());
@@ -71,5 +87,6 @@ public class RentService implements RentServiceInterface{
 
         return orderCurrencyExchangeDTO;
     }
+    //////////////////////////////////////////////////////////////////////////////
 
 }

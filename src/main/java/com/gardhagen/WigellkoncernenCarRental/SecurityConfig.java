@@ -7,10 +7,10 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
 
@@ -29,6 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     }
+
     @Bean
     public PasswordEncoder getPasswordEncoder(){ return NoOpPasswordEncoder.getInstance();
     }
@@ -39,12 +40,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/v1/cars").hasRole("USER")
                 .antMatchers("/api/v1/ordercar").hasRole("USER")
                 .antMatchers("/api/v1/exchange").hasRole("USER")
+                .antMatchers("/api/v1/myorders").hasRole("USER")
+                .antMatchers("/api/v1/updateorder").hasRole("USER")
                 .antMatchers("/api/v1/customers").hasRole("ADMIN")
                 .antMatchers("/api/v1/addcar").hasRole("ADMIN")
                 .antMatchers("/api/v1/deletecar/**").hasRole("ADMIN")
-                .antMatchers("/api/v1//updatecar/**").hasRole("ADMIN")
+                .antMatchers("/api/v1/updatecar/**").hasRole("ADMIN")
+                .antMatchers("/api/v1/cancelorder/**").hasRole("ADMIN")
                 .and()
                 .httpBasic();
+
+        http.cors().and().csrf().disable();
 
     }
 }

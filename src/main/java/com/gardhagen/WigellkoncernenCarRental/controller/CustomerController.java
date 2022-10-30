@@ -17,8 +17,6 @@ public class CustomerController {
 
     @Autowired
     private CustomerService customerService;
-    @Autowired
-    private CustomerRepository customerRepository;
 
     @Autowired
     public CustomerController(CustomerService customerService){this.customerService = customerService;}

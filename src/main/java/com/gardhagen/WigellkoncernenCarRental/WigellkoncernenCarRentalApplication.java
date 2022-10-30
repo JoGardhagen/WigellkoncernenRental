@@ -34,35 +34,40 @@ public class WigellkoncernenCarRentalApplication implements CommandLineRunner {
 	private RentRepository rentRepository;
 
 	@Bean
-//	@LoadBalanced
 	public RestTemplate restTemplate(){
 		return new RestTemplate();
 	}
 //	// För uppfyllnad;
 	@Override
 	public void run(String... args) throws Exception {
-
+//
 //		Address address = new Address();
-//		address.setLocationName("Arvika");
-//		address.setPostalNr(44344);
+//		address.setLocationName("Eskilstuna");
+//		address.setPostalNr(64434);
 //		addressRepository.save(address);
 //
 //		Customer customer = new Customer();
-//		customer.setFirstName("Nicola");
-//		customer.setLastName("Tesla");
-//		customer.setAge(81);
-//		customer.setEmail("nicola@gmail.com");
+//		customer.setFirstName("Joakim");
+//		customer.setLastName("Gårdhagen");
+//		customer.setAge(31);
+//		customer.setEmail("superapa.spanx@gmail.com");
 //		customer.setAddress(address);
 //
 //		customerRepository.save(customer);
 //
 //		Car car = new Car();
+//		car.setBrand("Volvo");
+//		car.setModelYear(2015);
+//		car.setRentalPrice(600.0);
+//
+//		carRepository.save(car);
+// 		Car car = new Car();
 //		car.setBrand("Tesla");
 //		car.setModelYear(2019);
 //		car.setRentalPrice(800.0);
 //
 //		carRepository.save(car);
-//
+
 //		Rent rent = new Rent();
 //		rent.setCustomer(customer);
 //		rent.setCar(car);

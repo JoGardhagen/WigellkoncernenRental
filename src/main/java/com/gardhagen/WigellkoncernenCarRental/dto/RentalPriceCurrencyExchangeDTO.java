@@ -1,5 +1,5 @@
 package com.gardhagen.WigellkoncernenCarRental.dto;
-
+//tanken var att man skulle kunna få ut en växlad hyrespris
 public class RentalPriceCurrencyExchangeDTO {
 
     private long carId;

@@ -31,9 +31,18 @@ public class Rent {
 
     private Date bookingDate = new Date(System.currentTimeMillis());
 
-
+    private boolean active;
 
     public Rent() {
+    }
+
+    public Rent(long id, Car car, Customer customer, int rentalDays, Date bookingDate, boolean active) {
+        this.id = id;
+        this.car = car;
+        this.customer = customer;
+        this.rentalDays = rentalDays;
+        this.bookingDate = bookingDate;
+        this.active = active;
     }
 
     public Rent(long id, Car car, Customer customer, int rentalDays, Date bookingDate) {
@@ -95,5 +104,13 @@ public class Rent {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }
